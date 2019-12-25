@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>اخبار ليبيا</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css"
+    integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous">
+
+
+  <div class="jumbotron text-center">
+    <h1 class="display-1"> Libya News Digest</h1>
+    <p><a class=" btn btn-primary btn-lg" href="/scrape" role="button">Latest News</a></p>
+    <p>Last updated on {{Data.UpdateTime}} </p>
+  </div>
+
+
+
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Libya24 -->
+
+      <div class="col">
+        <h1>ليبيا24 </h1>
+        <hr>
+
+        <p>
+          {{Data.Libya24News.0.Headline }}<a href={{Data.Libya24News.0.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a>
+        </p>
+
+
+
+        <p>
+          {{Data.Libya24News.1.Headline }}<a href={{Data.Libya24News.1.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a> 
+          </p>
+
+        <p>
+          {{Data.Libya24News.2.Headline }}<a href={{Data.Libya24News.2.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a></p>
+
+        <p>
+          {{Data.Libya24News.3.Headline }}<a href={{Data.Libya24News.3.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a></p>
+
+        <p>
+          {{Data.Libya24News.4.Headline }}<a href={{Data.Libya24News.4.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a></p>
+
+        <p>
+          {{Data.Libya24News.5.Headline }}<a href={{Data.Libya24News.5.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a></p>
+
+        <p>
+          {{Data.Libya24News.6.Headline }}<a href={{Data.Libya24News.6.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a></p>
+
+        <p>
+          {{Data.Libya24News.7.Headline }}<a href={{Data.Libya24News.7.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a></p>
+
+        <p>
+          {{Data.Libya24News.8.Headline }}<a href={{Data.Libya24News.8.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a></p>
+
+        <p>
+          {{Data.Libya24News.9.Headline }}<a href={{Data.Libya24News.9.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a></p>
+
+
+      </div>
+
+      <div class="col">
+        <!-- AlwasatNews -->
+        <h1>بوابة الوسط</h1>
+        <hr>
+
+        <p>
+          {{Data.AlwasatNews.Headline.Headline }} <a href={{Data.AlwasatNews.Headline.Link}}
+            class="btn btn-outline-secondary btn-sm"> الخبر </a>
+        </p>
+        <p>
+          {{Data.AlwasatNews.Subheadlines.0.Headline }} <a href={{Data.AlwasatNews.Subheadlines.0.Link}}
+            class="btn btn-outline-secondary btn-sm"> الخبر </a>
+        </p>
+
+        <p>
+          {{Data.AlwasatNews.Subheadlines.1.Headline }} <a href={{Data.AlwasatNews.Subheadlines.1.Link}}
+            class="btn btn-outline-secondary btn-sm"> الخبر </a>
+        </p>
+        <p>
+          {{Data.AlwasatNews.OtherNews.0.Headline }} <a href={{Data.AlwasatNews.Subheadlines.0.Link}}
+            class="btn btn-outline-secondary btn-sm"> الخبر </a>
+        </p>
+        <p>
+          {{Data.AlwasatNews.OtherNews.1.Headline }} <a href={{Data.AlwasatNews.OtherNews.1.Link}}
+            class="btn btn-outline-secondary btn-sm"> الخبر </a>
+        </p>
+
+        <p>
+          {{Data.AlwasatNews.OtherNews.2.Headline }} <a href={{Data.AlwasatNews.OtherNews.2.Link}}
+            class="btn btn-outline-secondary btn-sm"> الخبر </a>
+        </p>
+
+      </div>
+
+
+      <div class="col">
+        <h1>الجزيرة </h1>
+        <hr>
+
+
+        <p>
+          {{Data.AlJazeera.Headline.Headline }} <a href={{Data.AlJazeera.Headline.Link}}
+            class="btn btn-outline-secondary btn-sm">
+            الخبر </a>
+        </p>
+        <p>
+          {{Data.AlJazeera.Subheadlines.0.Headline }} <a href={{Data.AlJazeera.Subheadlines.0.Link}}
+            class="btn btn-outline-secondary btn-sm"> الخبر </a>
+        </p>
+
+        <p>
+          {{Data.AlJazeera.Subheadlines.1.Headline }} <a href={{Data.AlJazeera.Subheadlines.1.Link}}
+            class="btn btn-outline-secondary btn-sm"> الخبر </a>
+        </p>
+
+        <p>
+          {{Data.AlJazeera.Subheadlines.2.Headline }} <a href={{Data.AlJazeera.Subheadlines.2.Link}}
+            class="btn btn-outline-secondary btn-sm"> الخبر </a>
+        </p>
+
+        <p>
+          {{Data.AlJazeera.Subheadlines.3.Headline }} <a href={{Data.AlJazeera.Subheadlines.3.Link}}
+            class="btn btn-outline-secondary btn-sm"> الخبر </a>
+        </p>
+
+        <p>
+          {{Data.AlJazeera.Subheadlines.4.Headline }} <a href={{Data.AlJazeera.Subheadlines.4.Link}}
+            class="btn btn-outline-secondary btn-sm"> الخبر </a>
+        </p>
+
+        <p>
+          {{Data.AlJazeera.Subheadlines.5.Headline }} <a href={{Data.AlJazeera.Subheadlines.5.Link}}
+            class="btn btn-outline-secondary btn-sm"> الخبر </a>
+        </p>
+
+
+      </div>
+
+      <div class="col">
+
+        <h1>قناة 218</h1>
+        <hr>
+
+        <p>
+          {{Data.Libya218.0.Headline }} <a href={{Data.Libya218.0.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a>
+        </p>
+
+        <p>
+          {{Data.Libya218.1.Headline }} <a href={{Data.Libya218.1.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a>
+        </p>
+
+        <p>
+          {{Data.Libya218.2.Headline }} <a href={{Data.Libya218.2.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a>
+        </p>
+
+        <p>
+          {{Data.Libya218.3.Headline }} <a href={{Data.Libya218.3.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a>
+        </p>
+
+        <p>
+          {{Data.Libya218.4.Headline }} <a href={{Data.Libya218.4.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a>
+        </p>
+
+        <p>
+          {{Data.Libya218.5.Headline }} <a href={{Data.Libya218.5.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a>
+        </p>
+
+        <p>
+          {{Data.Libya218.6.Headline }} <a href={{Data.Libya218.6.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a>
+        </p>
+
+        <p>
+          {{Data.Libya218.7.Headline }} <a href={{Data.Libya218.7.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a>
+        </p>
+
+        <p>
+          {{Data.Libya218.8.Headline }} <a href={{Data.Libya218.8.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a>
+        </p>
+
+        <p>
+          {{Data.Libya218.9.Headline }} <a href={{Data.Libya218.9.Link }} class="btn btn-outline-secondary btn-sm">
+            الخبر </a>
+
+
+
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="container">
+
+    <h1>Libya24News</h1>
+
+    <div class="card-columns">
+      <div class="card">
+        <img src="../static/Screenshot_02.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">{{Data.Libya218.8.Headline }}</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../static/Screenshot_02.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">{{Data.Libya218.5.Headline }}</p>
+        </div>
+      </div>
+
+
+
+
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+
+
+
+
+
+    </body>
+
+</html>
