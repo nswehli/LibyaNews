@@ -172,7 +172,7 @@ def Home():
     response = requests.get(url, headers=headers)
     soup = BS(response.text, 'html.parser')
     results = soup.find_all(class_="cb-post-title")
-    for news in results:
+    for news in results[:10]:
         Headline = (news.text.strip())
         Link = (news("a")[0]["href"])
         Headlines = {"Headline": Headline, "Link": Link}
@@ -188,7 +188,7 @@ def Home():
     soup = BS(response.text, 'html.parser')
     results = soup.find_all(class_="m-item-list-article")
     print(response)
-    for news in results:
+    for news in results[:10]:
         Headline = (news.find(class_="article__title").text.strip())
         Link = ("https://www.france24.com/"+news("a")[0]["href"])
         Headlines = {"Headline": Headline, "Link": Link}
@@ -210,10 +210,43 @@ def Home():
         Headlines = {"Headline": Headline, "Link": Link}
         AlHadeth.append(Headlines)
 
+    #BawabaAfrica
+
+    url = "https://www.afrigatenews.net/section/%D9%84%D9%8A%D8%A8%D9%8A%D8%A7/"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+    }
+    BawabaAfrica=[]
+    response = requests.get(url, headers=headers)
+    soup= BS(response.text, 'html.parser')
+
+    results=soup.find(class_="section-content")
+    news=results.find_all(class_="wt")
+    for x in news:
+        Headline=(x('a')[0].text)
+        Link=("https://www.afrigatenews.net/"+x('a')[0]["href"])
+        Headlines={"Headline":Headline
+                ,"Link": Link}
+        BawabaAfrica.append(Headlines)
+
+
     Now = datetime.now()
 
-    data = {"AlwasatNews": WasatNews, "Libya24News": Libya24News,
-            "AlJazeera": AlJazeeraNews, "Libya218": Libya218News, "BBCArabic": BBCArabic, "RussiaToday": RTArabic, "AlRaed": AlRaed, "LibyaAhrar": LibyaAhrar, "AlMarsad": AlMarsad, "France24": France24, "AlHadeth": AlHadeth, "UpdateTime": Now}
+    data = {"AlwasatNews": WasatNews
+            , "Libya24News": Libya24News
+            ,"AlJazeera": AlJazeeraNews
+            , "Libya218": Libya218News
+            , "BBCArabic": BBCArabic
+            , "RussiaToday": RTArabic
+            , "AlRaed": AlRaed
+            , "LibyaAhrar": LibyaAhrar
+            , "AlMarsad": AlMarsad
+            , "France24": France24
+            , "AlHadeth": AlHadeth
+            ,"BawabaAfrica":BawabaAfrica
+            , "UpdateTime": Now}
+    
+    
     print(f"Data Scraping completed on {Now}")
     return render_template("index.html", Data=data)
 

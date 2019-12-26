@@ -60,8 +60,9 @@
           <hr>
       </div>
 
+      <!-- AlwasatNews -->
       <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-        <!-- AlwasatNews -->
+
         <p>
           <img src="../static/Alwasat.png" class="img-fluid" alt="Responsive image">
         </p>
@@ -97,6 +98,181 @@
         <hr>
       </div>
 
+      <!-- BawabaAfrica -->
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+
+        <p>
+          <img src="../static/Bawaba.png" class="img-fluid" alt="Responsive image">
+        </p>
+        <hr>
+
+        <ul class="list-group list-group-flush">
+          {% for news in Data.BawabaAfrica %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ news.Headline }}
+            <span>
+              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
+                الخبر </a>
+            </span>
+          </li>
+
+          {% endfor %}
+
+          <hr>
+
+      </div>
+
+      <!-- Libya218 -->
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+        <p>
+          <img src="../static/218.png" class="img-fluid" alt="Responsive image">
+        </p>
+        <hr>
+        <ul class="list-group list-group-flush">
+          {% for news in Data.Libya218 %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ news.Headline }}
+            <span>
+              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
+                الخبر </a>
+            </span>
+          </li>
+
+          {% endfor %}
+          <hr>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <!-- Alraed -->
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+        <p>
+          <img src="../static/Alraed.png" class="img-fluid" alt="Responsive image">
+        </p>
+        <hr>
+
+        <ul class="list-group list-group-flush">
+          {% for news in Data.AlRaed %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ news.Headline }}
+            <span>
+              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
+                الخبر </a>
+            </span>
+          </li>
+
+          {% endfor %}
+
+
+          <hr>
+      </div>
+
+      <!-- LibyaAhrar -->
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+
+        <p>
+          <img src="../static/LibyaAhrar.png" class="img-fluid" alt="Responsive image">
+        </p>
+        <hr>
+
+        <ul class="list-group list-group-flush">
+          {% for news in Data.LibyaAhrar %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ news.Headline }}
+            <span>
+              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
+                الخبر </a>
+            </span>
+          </li>
+
+          {% endfor %}
+
+
+          <hr>
+
+      </div>
+
+
+      <!-- AlMarsad -->
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+
+        <p>
+          <img src="../static/AlMarsad.png" class="img-fluid" alt="Responsive image">
+        </p>
+        <hr>
+
+        <ul class="list-group list-group-flush">
+          {% for news in Data.AlMarsad %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ news.Headline }}
+            <span>
+              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
+                الخبر </a>
+            </span>
+          </li>
+
+          {% endfor %}
+
+
+
+          <hr>
+      </div>
+
+      <!-- AlHadeth -->
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+
+        <p>
+          <img src="../static/AlHadeth.png" class="img-fluid" alt="Responsive image">
+        </p>
+        <hr>
+
+        <ul class="list-group list-group-flush">
+          {% for news in Data.AlHadeth %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ news.Headline }}
+            <span>
+              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
+                الخبر </a>
+            </span>
+          </li>
+
+          {% endfor %}
+
+          <hr>
+
+      </div>
+    </div>
+
+    <div class="row">
+
+
+      <!-- France24 -->
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+
+        <p>
+          <img src="../static/France24.png" class="img-fluid" alt="Responsive image">
+        </p>
+        <hr>
+
+        <ul class="list-group list-group-flush">
+          {% for news in Data.France24 %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ news.Headline }}
+            <span>
+              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
+                الخبر </a>
+            </span>
+          </li>
+
+          {% endfor %}
+
+
+          <hr>
+      </div>
+
+
       <!-- AlJazeera -->
       <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
         <p>
@@ -126,29 +302,7 @@
           <hr>
       </div>
 
-      <!-- Libya218 -->
-      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-        <p>
-          <img src="../static/218.png" class="img-fluid" alt="Responsive image">
-        </p>
-        <hr>
-        <ul class="list-group list-group-flush">
-          {% for news in Data.Libya218 %}
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            {{ news.Headline }}
-            <span>
-              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
-                الخبر </a>
-            </span>
-          </li>
-
-          {% endfor %}
-          <hr>
-      </div>
-
-    </div>
-
-    <div class="row">
+      <!-- BBArabic -->
       <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
         <p>
@@ -170,6 +324,7 @@
           <hr>
       </div>
 
+      <!-- RussiaToday -->
       <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
         <p>
@@ -191,126 +346,7 @@
           <hr>
       </div>
 
-      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-        <p>
-          <img src="../static/Alraed.png" class="img-fluid" alt="Responsive image">
-        </p>
-        <hr>
 
-        <ul class="list-group list-group-flush">
-          {% for news in Data.AlRaed %}
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            {{ news.Headline }}
-            <span>
-              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
-                الخبر </a>
-            </span>
-          </li>
-
-          {% endfor %}
-
-
-          <hr>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-
-        <p>
-          <img src="../static/LibyaAhrar.png" class="img-fluid" alt="Responsive image">
-        </p>
-        <hr>
-
-        <ul class="list-group list-group-flush">
-          {% for news in Data.LibyaAhrar %}
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            {{ news.Headline }}
-            <span>
-              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
-                الخبر </a>
-            </span>
-          </li>
-
-          {% endfor %}
-
-
-          <hr>
-
-      </div>
-
-    </div>
-
-    <div class="row">
-
-
-      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-
-        <p>
-          <img src="../static/AlMarsad.png" class="img-fluid" alt="Responsive image">
-        </p>
-        <hr>
-
-        <ul class="list-group list-group-flush">
-          {% for news in Data.AlMarsad %}
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            {{ news.Headline }}
-            <span>
-              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
-                الخبر </a>
-            </span>
-          </li>
-
-          {% endfor %}
-
-
-
-          <hr>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-
-        <p>
-          <img src="../static/France24.png" class="img-fluid" alt="Responsive image">
-        </p>
-        <hr>
-
-        <ul class="list-group list-group-flush">
-          {% for news in Data.France24 %}
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            {{ news.Headline }}
-            <span>
-              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
-                الخبر </a>
-            </span>
-          </li>
-
-          {% endfor %}
-
-
-          <hr>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-
-        <p>
-          <img src="../static/AlHadeth.png" class="img-fluid" alt="Responsive image">
-        </p>
-        <hr>
-
-        <ul class="list-group list-group-flush">
-          {% for news in Data.AlHadeth %}
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            {{ news.Headline }}
-            <span>
-              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
-                الخبر </a>
-            </span>
-          </li>
-
-          {% endfor %}
-
-          <hr>
-
-      </div>
     </div>
 
   </div>
