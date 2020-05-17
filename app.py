@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template
 from bs4 import BeautifulSoup as BS
 import requests
@@ -13,8 +14,13 @@ print("Today's date:", today)
 # create instance of Flask app
 app = Flask(__name__)
 
+MONGO_URL = os.environ.get('MONGO_URL')
+if not MONGO_URL:
+    MONGO_URL = "mongodb+srv://nswehli:900941196@lynews-7ygvg.mongodb.net/LyNews?retryWrites=true&w=majority"
+
 mongo = PyMongo(
-    app, uri="mongodb+srv://nswehli:900941196@lynews-7ygvg.mongodb.net/LyNews?retryWrites=true&w=majority")
+    app, uri=MONGO_URL)
+
 
 # create route that renders index.html template
 
