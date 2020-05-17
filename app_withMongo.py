@@ -4,6 +4,8 @@ import requests
 import datetime
 from datetime import date
 from datetime import datetime
+from flask_pymongo import PyMongo
+
 today = date.today()
 print("Today's date:", today)
 
@@ -11,12 +13,29 @@ print("Today's date:", today)
 # create instance of Flask app
 app = Flask(__name__)
 
+mongo = PyMongo(
+    app, uri="mongodb+srv://nswehli:900941196@lynews-7ygvg.mongodb.net/LyNews?retryWrites=true&w=majority")
 
 # create route that renders index.html template
 
 
 @app.route("/")
 def Home():
+    # Find one record of data from the mongo database
+
+    news = mongo.db.News
+    NewsData = news.find_one()
+    sortedNews = news.find().sort("_id", -1).limit(1)
+
+    for x in sortedNews:
+        NewsData = x
+
+    # Return template and data
+    return render_template("index.html", Data=NewsData)
+
+
+@app.route("/scrape")
+def scrape():
 
     url = "http://alwasat.ly/section/libya"
     response = requests.get(url)
@@ -210,43 +229,29 @@ def Home():
         Headlines = {"Headline": Headline, "Link": Link}
         AlHadeth.append(Headlines)
 
-    #BawabaAfrica
+    # BawabaAfrica
 
     url = "https://www.afrigatenews.net/section/%D9%84%D9%8A%D8%A8%D9%8A%D8%A7/"
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
     }
-    BawabaAfrica=[]
+    BawabaAfrica = []
     response = requests.get(url, headers=headers)
-    soup= BS(response.text, 'html.parser')
+    soup = BS(response.text, 'html.parser')
 
-    results=soup.find(class_="section-content")
-    news=results.find_all(class_="wt")
+    results = soup.find(class_="section-content")
+    news = results.find_all(class_="wt")
     for x in news:
-        Headline=(x('a')[0].text)
-        Link=("https://www.afrigatenews.net/"+x('a')[0]["href"])
-        Headlines={"Headline":Headline
-                ,"Link": Link}
+        Headline = (x('a')[0].text)
+        Link = ("https://www.afrigatenews.net/"+x('a')[0]["href"])
+        Headlines = {"Headline": Headline, "Link": Link}
         BawabaAfrica.append(Headlines)
-
 
     Now = datetime.now()
 
-    data = {"AlwasatNews": WasatNews
-            , "Libya24News": Libya24News
-            ,"AlJazeera": AlJazeeraNews
-            , "Libya218": Libya218News
-            , "BBCArabic": BBCArabic
-            , "RussiaToday": RTArabic
-            , "AlRaed": AlRaed
-            , "LibyaAhrar": LibyaAhrar
-            , "AlMarsad": AlMarsad
-            , "France24": France24
-            , "AlHadeth": AlHadeth
-            ,"BawabaAfrica":BawabaAfrica
-            , "UpdateTime": Now}
-    
-    
+    data = {"AlwasatNews": WasatNews, "Libya24News": Libya24News, "AlJazeera": AlJazeeraNews, "Libya218": Libya218News, "BBCArabic": BBCArabic, "RussiaToday": RTArabic,
+            "AlRaed": AlRaed, "LibyaAhrar": LibyaAhrar, "AlMarsad": AlMarsad, "France24": France24, "AlHadeth": AlHadeth, "BawabaAfrica": BawabaAfrica, "UpdateTime": Now}
+
     print(f"Data Scraping completed on {Now}")
     return render_template("index.html", Data=data)
 
