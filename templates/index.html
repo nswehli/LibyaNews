@@ -32,9 +32,10 @@
     <p><a class=" btn  btn-lg " style=" font-family:Helvetica;color:#ffffff; background-color:#8B7487" href="/scrape"
         role="button">Update
         News</a></p>
-    Last updated
-    <p id="date"> </p>
-    <p id="today"></p>
+
+    <p> Last updated <i id="date"> </i> </p>
+    <p id="today"> </p>
+
     <Script>
       var a = '{{ Data.UpdateTime }}';
       var b = moment(a).format('MMMM Do YYYY, h:mm:ss a')
