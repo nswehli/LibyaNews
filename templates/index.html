@@ -36,18 +36,18 @@
     <p id="date"> </p>
     <p id="today"></p>
     <Script>
-      var d = '{{ Data.UpdateTime }}';
-      var f = moment(d).format('MMMM Do YYYY, h:mm:ss a')
-      var a = moment(d).fromNow()
-      var c = moment(d).startOf('hour').fromNow()
-      var e = moment(d).format('LL')
-      document.getElementById("date").innerHTML = a;
-      document.getElementById("today").innerHTML = f;
-      console.log(a)
-      console.log(d)
-      console.log(c)
-      console.log(e)
-      console.log(f)
+      var a = '{{ Data.UpdateTime }}';
+      var b = moment(a).format('MMMM Do YYYY, h:mm:ss a')
+      var c = moment(a).fromNow()
+      var d = moment(a).startOf('hour').fromNow()
+      var e = moment(a).format('LL')
+      document.getElementById("date").innerHTML = c;
+      document.getElementById("today").innerHTML = e;
+      console.log("a=", a)
+      console.log("b=", b)
+      console.log("c=", c)
+      console.log("d", d)
+      console.log("e", e)
     </Script>
 
 

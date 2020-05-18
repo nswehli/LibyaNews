@@ -5,6 +5,8 @@ import requests
 import datetime
 from datetime import date
 from datetime import datetime
+from datetime import timezone
+
 from flask_pymongo import PyMongo
 
 today = date.today()
@@ -253,7 +255,7 @@ def scrape():
         Headlines = {"Headline": Headline, "Link": Link}
         BawabaAfrica.append(Headlines)
 
-    Now = datetime.now()
+    Now = datetime.now(timezone.utc)
 
     data = {"AlwasatNews": WasatNews, "Libya24News": Libya24News, "AlJazeera": AlJazeeraNews, "Libya218": Libya218News, "BBCArabic": BBCArabic, "RussiaToday": RTArabic,
             "AlRaed": AlRaed, "LibyaAhrar": LibyaAhrar, "AlMarsad": AlMarsad, "France24": France24, "AlHadeth": AlHadeth, "BawabaAfrica": BawabaAfrica, "UpdateTime": Now}
