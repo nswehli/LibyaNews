@@ -33,15 +33,21 @@
         role="button">Update
         News</a></p>
     Last updated
-    <p id="dateR"> </p>
+    <p id="date"> </p>
+    <p id="today"></p>
     <Script>
       var d = '{{ Data.UpdateTime }}';
+      var f = moment(d).format('MMMM Do YYYY, h:mm:ss a')
       var a = moment(d).fromNow()
-      var c = moment().startOf('hour').fromNow()
-      document.getElementById("dateR").innerHTML = a;
+      var c = moment(d).startOf('hour').fromNow()
+      var e = moment(d).format('LL')
+      document.getElementById("date").innerHTML = a;
+      document.getElementById("today").innerHTML = f;
       console.log(a)
       console.log(d)
       console.log(c)
+      console.log(e)
+      console.log(f)
     </Script>
 
 
