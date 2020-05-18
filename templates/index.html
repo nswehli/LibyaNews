@@ -2,6 +2,8 @@
 <html lang="ar" dir="rtl">
 
 <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.min.js"
+    integrity="sha256-C66CaAImteEKZPYvgng9j10J/45e9sAuZyfPYCwp4gE=" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,6 +15,8 @@
     integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous">
   <link rel="stylesheet" href="../static/css/style.css">
   <link rel="icon" href="../static/Diwan_Research_Logo_PNG_Format_Transparent_.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.min.js"
+    integrity="sha256-C66CaAImteEKZPYvgng9j10J/45e9sAuZyfPYCwp4gE=" crossorigin="anonymous"></script>
 
 
   <div class="jumbotron text-center" style=" background-color: #B3C7D3
@@ -28,7 +32,20 @@
     <p><a class=" btn  btn-lg " style=" font-family:Helvetica;color:#ffffff; background-color:#8B7487" href="/scrape"
         role="button">Update
         News</a></p>
-    <p>Last updated on {{Data.UpdateTime}} </p>
+    Last updated
+    <p id="dateR"> </p>
+    <Script>
+      var d = '{{ Data.UpdateTime }}';
+      var a = moment(d).fromNow()
+      var c = moment().startOf('hour').fromNow()
+      document.getElementById("dateR").innerHTML = a;
+      console.log(a)
+      console.log(d)
+      console.log(c)
+    </Script>
+
+
+    <!-- <p>Last updated on {{Data.UpdateTime}} </p> -->
     <p><i>A Data Analytics Project by</i></p>
     <a href="https://diwan.ly/">
       <img src="../static/DIWAN_logo_BLACK.png" alt="Diwan Research" , style="widows: 1500px;;height:38px;border:0;">
