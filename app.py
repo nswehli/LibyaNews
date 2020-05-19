@@ -6,6 +6,7 @@ import datetime
 from datetime import date
 from datetime import datetime
 from datetime import timezone
+import json
 
 from flask_pymongo import PyMongo
 
@@ -93,7 +94,7 @@ def scrape():
         Libya24News.append(News)
 
     # AlJazeera
-# Updated on May 19,2020 because Aljazeera changed its website design
+    # Updated on May 19,2020 because Aljazeera changed its website design
 
     url = "https://www.aljazeera.net/where/libya/"
     response = requests.get(url)
@@ -253,6 +254,21 @@ def scrape():
 
     print(f"Data Scraping completed on {Now}")
     return render_template("index.html", Data=data)
+
+
+@app.route("/api")
+def api():
+    news = mongo.db.News
+    NewsData = []
+    sortedNews = news.find()
+
+    for item in sortedNews:
+        NewsData.append(item)
+
+    api = json.dumps(NewsData, indent=4, sort_keys=True,
+                     default=str, ensure_ascii=False).encode('utf8')
+
+    return api
 
 
 if __name__ == "__main__":
