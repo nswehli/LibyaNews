@@ -93,46 +93,37 @@ def scrape():
         Libya24News.append(News)
 
     # AlJazeera
+# Updated on May 19,2020 because Aljazeera changed its website design
 
-    url = "https://www.aljazeera.net/countries/libya"
+    url = "https://www.aljazeera.net/where/libya/"
     response = requests.get(url)
     soup = BS(response.text, 'html.parser')
-    news = soup.find_all(id="top-stories")
+    # news=soup.find_all(class_="container--section-top-grid")
+    print(response)
 
-    News = []
+    headlines = soup.find_all(class_="generic-card__title")
 
-    for x in news:
-        MainHeadline = (x.find(class_="main_title_new").get_text().strip())
-        Link = ("https://www.aljazeera.net/" +
-                x.find(class_="main_title_new")("a")[0]["href"])
-        Image = ("https://www.aljazeera.net/"+x.find("img")["src"])
-        MainHeadline = {"Headline": MainHeadline, "Link": Link, "Image": Image}
+    AlJazeeraNews = []
 
-    for x in news:
-        y = x.find_all(class_="tb3")
-        for item in y:
-            Headline = (item("img")[0]["title"])
-            Link = ("https://www.aljazeera.net/"+item["href"])
-            otherNews = {"Headline": Headline, "Link": Link}
-            News.append(otherNews)
+    for x in headlines[:10]:
+        Headline = (x.get_text())
+        Link = ("https://www.aljazeera.net"+x.find("a")["href"])
+        news = {"Headline": Headline, "Link": Link}
+        AlJazeeraNews.append(news)
 
-    AlJazeeraNews = {"Headline": MainHeadline,
-                     "Subheadlines": News
-                     }
+        # Libya 218
 
-    # Libya 218
-
-    url = "https://www.218tv.net/category/سياسة/أخبار-ليبيا"
-    response = requests.get(url)
-    soup = BS(response.text, 'html.parser')
-    Libya218News = []
-    news = soup.find_all(class_="post-element")
-    for x in news:
-        Headline = (x.find(class_="featured-area")("a")[0]["aria-label"])
-        Link = (x.find(class_="featured-area")("a")[0]["href"])
-        Image = (x.find(class_="featured-area")("img")[0]["src"])
-        MainHeadline = {"Headline": Headline, "Link": Link, "Image": Image}
-        Libya218News.append(MainHeadline)
+        url = "https://www.218tv.net/category/سياسة/أخبار-ليبيا"
+        response = requests.get(url)
+        soup = BS(response.text, 'html.parser')
+        Libya218News = []
+        news = soup.find_all(class_="post-element")
+        for x in news:
+            Headline = (x.find(class_="featured-area")("a")[0]["aria-label"])
+            Link = (x.find(class_="featured-area")("a")[0]["href"])
+            Image = (x.find(class_="featured-area")("img")[0]["src"])
+            MainHeadline = {"Headline": Headline, "Link": Link, "Image": Image}
+            Libya218News.append(MainHeadline)
 
     # BBCArabic
     url = "https://www.bbc.com/arabic/topics/cnq681w1w42t"
