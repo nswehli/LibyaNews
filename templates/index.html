@@ -80,22 +80,21 @@
         <hr>
         <ul class="list-group list-group-flush">
           {% for news in Data.Libya24News %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
-
             {{ news.Headline }}
             <span>
               <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
           <hr>
       </div>
 
       <!-- AlwasatNews -->
       <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-
         <p>
           <img src="../static/Alwasat.png" class="img-fluid" alt="Responsive image">
         </p>
@@ -141,6 +140,7 @@
 
         <ul class="list-group list-group-flush">
           {% for news in Data.BawabaAfrica %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
             <span>
@@ -148,7 +148,7 @@
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
 
           <hr>
@@ -163,6 +163,7 @@
         <hr>
         <ul class="list-group list-group-flush">
           {% for news in Data.Libya218 %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
             <span>
@@ -170,7 +171,7 @@
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
           <hr>
       </div>
@@ -188,6 +189,7 @@
 
         <ul class="list-group list-group-flush">
           {% for news in Data.AlRaed %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
             <span>
@@ -195,9 +197,8 @@
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
-
 
           <hr>
       </div>
@@ -209,9 +210,9 @@
           <img src="../static/LibyaAhrar.png" class="img-fluid" alt="Responsive image">
         </p>
         <hr>
-
         <ul class="list-group list-group-flush">
           {% for news in Data.LibyaAhrar %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
             <span>
@@ -219,7 +220,7 @@
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
 
 
@@ -238,6 +239,7 @@
 
         <ul class="list-group list-group-flush">
           {% for news in Data.AlMarsad %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
             <span>
@@ -245,7 +247,7 @@
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
 
 
@@ -263,6 +265,7 @@
 
         <ul class="list-group list-group-flush">
           {% for news in Data.AlHadeth %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
             <span>
@@ -270,7 +273,7 @@
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
 
           <hr>
@@ -291,6 +294,7 @@
 
         <ul class="list-group list-group-flush">
           {% for news in Data.EinLibya %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
             <span>
@@ -298,7 +302,7 @@
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
 
 
@@ -317,6 +321,7 @@
 
 
           {% for news in Data.Alsaaa24 %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
             <span>
@@ -324,7 +329,7 @@
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
 
           <hr>
@@ -339,6 +344,7 @@
         <hr>
         <ul class="list-group list-group-flush">
           {% for news in Data.LyWatan %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
             <span>
@@ -346,13 +352,13 @@
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
 
           <hr>
       </div>
 
-      <!-- RussiaToday -->
+      <!-- Libya Panoroma -->
       <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
         <p>
@@ -361,6 +367,7 @@
         <hr>
         <ul class="list-group list-group-flush">
           {% for news in Data.LyPanoroma %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
             <span>
@@ -368,7 +375,7 @@
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
 
           <hr>
@@ -390,6 +397,7 @@
 
         <ul class="list-group list-group-flush">
           {% for news in Data.France24 %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
             <span>
@@ -397,7 +405,7 @@
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
 
 
@@ -416,14 +424,16 @@
 
 
           {% for news in Data.AlJazeera %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
+
             <span>
               <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
 
           <hr>
@@ -438,6 +448,7 @@
         <hr>
         <ul class="list-group list-group-flush">
           {% for news in Data.BBCArabic %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
             <span>
@@ -445,7 +456,7 @@
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
 
           <hr>
@@ -460,6 +471,7 @@
         <hr>
         <ul class="list-group list-group-flush">
           {% for news in Data.RussiaToday %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
             <span>
@@ -467,7 +479,7 @@
                 الخبر </a>
             </span>
           </li>
-
+          {% endif %}
           {% endfor %}
 
           <hr>

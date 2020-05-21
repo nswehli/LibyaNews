@@ -246,11 +246,91 @@ def scrape():
         Link = ("https://www.afrigatenews.net/"+x('a')[0]["href"])
         Headlines = {"Headline": Headline, "Link": Link}
         BawabaAfrica.append(Headlines)
+       # EinLibya
+    url = "https://www.eanlibya.com/libya/"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+    }
+    EinLibya = []
+    response = requests.get(url, headers=headers)
+    soup = BS(response.text, 'html.parser')
+    results = soup.find_all(class_="entry-title")
+
+    for news in results[:10]:
+        Headline = (news.find("a").text)
+        Link = (news.find("a")["href"])
+        Headlines = {"Headline": Headline, "Link": Link}
+        EinLibya.append(Headlines)
+
+        # alsaaa24
+    url = "https://www.alsaaa24.com/libya/"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+    }
+    Alsaaa24 = []
+    response = requests.get(url, headers=headers)
+    soup = BS(response.text, 'html.parser')
+    results = soup.find_all(class_="post")
+
+    for item in results[:10]:
+        Headline = (item.find("a")["title"])
+        Link = (item.find("a")["href"])
+        Headlines = {"Headline": Headline, "Link": Link}
+        Alsaaa24.append(Headlines)
+        # lIBYAaLWATAN
+
+    url = "https://libyaschannel.com/category/libya/"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+    }
+    LyWatan = []
+    response = requests.get(url, headers=headers)
+    soup = BS(response.text, 'html.parser')
+    results = soup.find_all(class_="xt-post-title")
+
+    for item in results[:10]:
+        Headline = (item.find("a")["title"])
+        Link = (item.find("a")["href"])
+        Headlines = {"Headline": Headline, "Link": Link}
+        LyWatan.append(Headlines)
+
+    # lIBYAPanoroma
+
+    url = "https://www.lpc.ly/category/news-2/"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+    }
+    LyPanoroma = []
+    response = requests.get(url, headers=headers)
+    soup = BS(response.text, 'html.parser')
+    results = soup.find_all(class_="td-module-thumb")
+
+    for item in results[:10]:
+        Headline = (item.find("a")["title"])
+        Link = (item.find("a")["href"])
+        Headlines = {"Headline": Headline, "Link": Link}
+        LyPanoroma.append(Headlines)
+        # Jamahrya
+
+    url = "https://www.ljbctv.tv/libya"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+    }
+    Jamahrya = []
+    response = requests.get(url, headers=headers)
+    soup = BS(response.text, 'html.parser')
+    results = soup.find_all(class_="post-title")
+
+    for item in results[:10]:
+        Headline = (item.find("a").text)
+        Link = (item.find("a")["href"])
+        Headlines = {"Headline": Headline, "Link": Link}
+        Jamahrya.append(Headlines)
 
     Now = datetime.now(timezone.utc)
 
     data = {"AlwasatNews": WasatNews, "Libya24News": Libya24News, "AlJazeera": AlJazeeraNews, "Libya218": Libya218News, "BBCArabic": BBCArabic, "RussiaToday": RTArabic,
-            "AlRaed": AlRaed, "LibyaAhrar": LibyaAhrar, "AlMarsad": AlMarsad, "France24": France24, "AlHadeth": AlHadeth, "BawabaAfrica": BawabaAfrica, "UpdateTime": Now}
+            "AlRaed": AlRaed, "LibyaAhrar": LibyaAhrar, "AlMarsad": AlMarsad, "France24": France24, "AlHadeth": AlHadeth, "BawabaAfrica": BawabaAfrica, "EinLibya": EinLibya, "Alsaaa24": Alsaaa24, "LyWatan": LyWatan, "LyPanoroma": LyPanoroma, "Jamahrya": Jamahrya, "UpdateTime": Now}
 
     print(f"Data Scraping completed on {Now}")
     return render_template("index.html", Data=data)
