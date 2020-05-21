@@ -68,6 +68,7 @@
 
 
   <div class="container-fluid " style=" font-family:Helvetica;color:#0E183B ; background-color:#fefeff">
+
     <div class="row justify-content-center ">
 
       <!-- Libya24 -->
@@ -280,6 +281,105 @@
     <div class="row">
 
 
+      <!-- EinLibya -->
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+
+        <p>
+          <img src="../static/EanLibya.png" class="img-fluid" alt="Responsive image">
+        </p>
+        <hr>
+
+        <ul class="list-group list-group-flush">
+          {% for news in Data.EinLibya %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ news.Headline }}
+            <span>
+              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
+                الخبر </a>
+            </span>
+          </li>
+
+          {% endfor %}
+
+
+          <hr>
+      </div>
+
+      <!-- Elsaaa24 -->
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+        <p>
+          <img src="../static/ElSaaa24.png" class="img-fluid" alt="Responsive image">
+        </p>
+        <hr>
+
+
+        <ul class="list-group list-group-flush">
+
+
+          {% for news in Data.Alsaaa24 %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ news.Headline }}
+            <span>
+              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
+                الخبر </a>
+            </span>
+          </li>
+
+          {% endfor %}
+
+          <hr>
+      </div>
+
+      <!-- LyWatan -->
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+
+        <p>
+          <img src="../static/Lywatan.png" class="img-fluid" alt="Responsive image">
+        </p>
+        <hr>
+        <ul class="list-group list-group-flush">
+          {% for news in Data.LyWatan %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ news.Headline }}
+            <span>
+              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
+                الخبر </a>
+            </span>
+          </li>
+
+          {% endfor %}
+
+          <hr>
+      </div>
+
+      <!-- RussiaToday -->
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+
+        <p>
+          <img src="../static/Panorama.png" class="img-fluid" alt="Responsive image">
+        </p>
+        <hr>
+        <ul class="list-group list-group-flush">
+          {% for news in Data.LyPanoroma %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ news.Headline }}
+            <span>
+              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
+                الخبر </a>
+            </span>
+          </li>
+
+          {% endfor %}
+
+          <hr>
+      </div>
+
+
+    </div>
+
+    <div class="row">
+
+
       <!-- France24 -->
       <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
@@ -303,9 +403,6 @@
 
           <hr>
       </div>
-
-
-
 
       <!-- AlJazeera -->
       <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
@@ -378,12 +475,14 @@
 
 
     </div>
+
     <div class="row">
       <a href="https://diwan.ly/">
         <img src="../static/DIWAN_linkedin_cover_SKY.png" class="img-fluid" alt="Diwan Research" ">
 
     </a>
   </div>
+
   </div>
 
 
