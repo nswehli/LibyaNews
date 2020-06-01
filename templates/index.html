@@ -104,13 +104,8 @@
         </p>
         <hr>
         <ul class="list-group list-group-flush">
-
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            {{Data.AlwasatNews.Headline.Headline }} <a href={{Data.AlwasatNews.Headline.Link}}
-              class="btn btn-outline-secondary btn-sm"> الخبر </a>
-          </li>
-
-          {% for news in Data.AlwasatNews.Subheadlines %}
+          {% for news in Data.AlwasatNews %}
+          {% if news.Headline %}
           <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ news.Headline }}
             <span>
@@ -118,17 +113,9 @@
                 الخبر </a>
             </span>
           </li>
+          {% endif %}
           {% endfor %}
 
-          {% for news in Data.AlwasatNews.OtherNews %}
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            {{ news.Headline }}
-            <span>
-              <a href={{news.Link }} class="btn btn-outline-secondary btn-sm">
-                الخبر </a>
-            </span>
-          </li>
-          {% endfor %}
 
         </ul>
         <hr>
