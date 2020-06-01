@@ -11,6 +11,7 @@ import json
 from flask_pymongo import PyMongo
 
 today = date.today()
+Now = datetime.now()
 Retrieved = {"Retrieved on": Now}
 print("Today's date:", today)
 
