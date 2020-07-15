@@ -240,7 +240,7 @@ def scrape():
 
         for x in results:
             Headline = (x.text)
-            Link = (x("a")[0]["href"])
+            Link = f'https://libyaalahrar.tv/{(x("a")[0]["href"])}'
             Headlines = {"Headline": Headline, "Link": Link}
             LibyaAhrar.append(Headlines)
 
