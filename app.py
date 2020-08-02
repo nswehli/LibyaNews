@@ -236,7 +236,7 @@ def scrape():
         }
         response = requests.get(url, headers=headers)
         soup = BS(response.text, 'html.parser')
-        results = soup.find_all(class_="thumb-title")
+        results = soup.find_all(class_="post-title")
 
         for x in results:
             Headline = (x.text)
