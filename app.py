@@ -236,11 +236,11 @@ def scrape():
         }
         response = requests.get(url, headers=headers)
         soup = BS(response.text, 'html.parser')
-        results = soup.find_all(class_="post-title")
+        results = soup.find_all(class_="title")
 
         for x in results:
             Headline = (x.text)
-            Link = f'https://libyaalahrar.tv/{(x("a")[0]["href"])}'
+            Link = x("a")[0]["href"]
             Headlines = {"Headline": Headline, "Link": Link}
             LibyaAhrar.append(Headlines)
 
